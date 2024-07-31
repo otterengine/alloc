@@ -18,7 +18,8 @@
                 "backward",
                 "is_aligned",
                 "size_forward",
-                "size_backward"
+                "size_backward",
+                "is_size_aligned"
             ]
         }]
     }

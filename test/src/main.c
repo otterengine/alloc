@@ -14,6 +14,7 @@ void align_backward(void);
 void align_is_aligned(void);
 void align_size_forward(void);
 void align_size_backward(void);
+void align_is_size_aligned(void);
 
 bake_test_case align_testcases[] = {
     {
@@ -35,6 +36,10 @@ bake_test_case align_testcases[] = {
     {
         "size_backward",
         align_size_backward
+    },
+    {
+        "is_size_aligned",
+        align_is_size_aligned
     }
 };
 
@@ -44,7 +49,7 @@ static bake_test_suite suites[] = {
         "align",
         NULL,
         NULL,
-        5,
+        6,
         align_testcases
     }
 };

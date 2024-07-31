@@ -24,12 +24,18 @@ void align_is_aligned(void) {
 
 void align_size_forward(void) {
   unsigned long size = 123;
-  unsigned long align = 8;
-  test_assert(otter_align_size_forward(size, align) == 128);
+  test_assert(otter_align_size_forward(size, 8) == 128);
 }
 
 void align_size_backward(void) {
   unsigned long size = 123;
-  unsigned long align = 8;
-  test_assert(otter_align_size_backward(size, align) == 120);
+  test_assert(otter_align_size_backward(size, 8) == 120);
+}
+
+void align_is_size_aligned(void) {
+  unsigned long size = 124;
+  test_assert(otter_is_size_aligned(size, 4));
+  test_assert(!otter_is_size_aligned(size, 8));
+  test_assert(!otter_is_size_aligned(size, 16));
+  test_assert(!otter_is_size_aligned(size, 32));
 }
