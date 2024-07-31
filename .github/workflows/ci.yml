@@ -24,7 +24,7 @@ jobs:
 
       - name: build
         run: |
-          bake --strict
+          bake -r --strict
 
   build-windows:
     runs-on: windows-latest
@@ -42,7 +42,7 @@ jobs:
 
       - name: build
         run: |
-          bake/bake --strict
+          bake/bake -r --strict
   
   test-unix:
     needs: [ build-unix ]
@@ -62,7 +62,7 @@ jobs:
 
       - name: build
         run: |
-          bake --strict
+          bake -r --strict
 
       - name: test
         run: |
@@ -85,7 +85,7 @@ jobs:
 
       - name: build
         run: |
-          bake/bake --strict
+          bake/bake -r --strict
   
       - name: test
         run: |

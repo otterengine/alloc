@@ -10,5 +10,11 @@
     },
     "lang.c": {
         "c-standard": "c89"
+    },
+    "bundle": {
+        "default-host": "https://github.com/otterengine",
+        "repositories": {
+            "otter.slice": "otterengine/slice"
+        }
     }
 }
