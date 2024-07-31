@@ -1,0 +1,25 @@
+{
+    "id": "test",
+    "type": "application",
+    "value": {
+        "author": "Olle Lukowski",
+        "description": "Test project for otter.alloc",
+        "public": false,
+        "coverage": false,
+        "use": [
+            "otter.alloc"
+        ]
+    },
+    "test": {
+        "testsuites": [{
+            "id": "align",
+            "testcases": [
+                "forward",
+                "backward",
+                "is_aligned",
+                "size_forward",
+                "size_backward"
+            ]
+        }]
+    }
+}

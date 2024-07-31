@@ -1,0 +1,14 @@
+{
+    "id": "otter.alloc",
+    "type": "package",
+    "value": {
+        "author": "Olle Lukowski",
+        "description": "Module providing a memory allocation interface.",
+        "use": [
+            "otter.slice"
+        ]
+    },
+    "lang.c": {
+        "c-standard": "c89"
+    }
+}
