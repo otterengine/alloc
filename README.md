@@ -10,10 +10,10 @@ First, ensure you have installed all the dependencies.
 
 Then, clone the repository:
 ```sh
-git clone https://github.com/otterengine/template_module.git
+git clone https://github.com/otterengine/alloc.git
 ```
 
-Then, register the template for local usage.
+Then, build the module for local usage.
 ```sh
 bake
 ```
