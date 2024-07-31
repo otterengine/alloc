@@ -14,7 +14,7 @@
     "bundle": {
         "default-host": "https://github.com/otterengine",
         "repositories": {
-            "otter.slice": "otterengine/slice"
+            "otter.slice": "slice"
         }
     }
 }
