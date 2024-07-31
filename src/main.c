@@ -4,7 +4,7 @@
 
 static
 void
-memcpy(void *dst, void *src, unsigned long size) {
+memcpy_bytes(void *dst, void *src, unsigned long size) {
   unsigned char *d = dst;
   unsigned char *s = src;
   while (size > 0) {
@@ -87,7 +87,7 @@ otter_allocator_resize(otter_allocator_t allocator,
                        unsigned long elem_size,
                        unsigned long buf_align,
                        unsigned long new_size) {
-  if (new_size == 0) {
+  if (new_size == 0 || elem_size == 0) {
     otter_allocator_free(allocator, buf, buf_align);
     return 1;
   }
@@ -96,7 +96,7 @@ otter_allocator_resize(otter_allocator_t allocator,
     return 0;
   }
 
-  return allocator.vtable->resize(allocator.ctx, buf, buf_align, new_size);
+  return allocator.vtable->resize(allocator.ctx, buf, buf_align, elem_size * new_size);
 }
 
 otter_alloc_result_t
@@ -122,7 +122,7 @@ otter_allocator_realloc(otter_allocator_t allocator,
   }
 
   if (alloc_bytes_with_alignment(allocator, new_size, buf_align, &out->ptr) >= 0) {
-    memcpy(out->ptr, buf.ptr, buf.len);
+    memcpy_bytes(out->ptr, buf.ptr, buf.len);
 
     otter_allocator_free(allocator, buf, buf_align);
 
